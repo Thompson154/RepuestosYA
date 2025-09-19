@@ -30,7 +30,7 @@ export default function RegisterScreen() {
       {/* Password */}
       <View style={styles.inputContainer}>
         <Icon name="lock" size={20} color="#f8f8ff" style={styles.icon} />
-        <TextInput placeholder="**********" secureTextEntry style={styles.input} />
+        <TextInput placeholder="**********" secureTextEntry style={styles.input} color = '#fff'/>
       </View>
 
       {/* 🔴 Botón Registrarse (más grande) */}
@@ -58,7 +58,7 @@ export default function RegisterScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#B0B1B5',
+    backgroundColor: '#F8F4C4', // Fondo crema
     justifyContent: 'center',
     alignItems: 'center',
     padding: 20,
@@ -94,7 +94,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#9A0C1A',
     paddingVertical: 18, 
     borderRadius: 12, 
-    width: '60%', // 🔥 más ancho
+    width: '85%', // 🔥 más ancho
     alignItems: 'center',
     marginBottom: 20,
     elevation: 5, 
@@ -114,7 +114,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     borderRadius: 10,
     padding: 10,
-    width: '55%',
+    width: '85%',
     alignItems: 'center',
     marginBottom: 10,
     justifyContent: 'center',
@@ -129,4 +129,5 @@ const styles = StyleSheet.create({
     color: '#333',
     textAlign: 'center',
   },
+
 });

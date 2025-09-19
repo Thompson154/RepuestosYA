@@ -27,16 +27,18 @@ function StoreTabs() {
           if (route.name === 'Home') iconName = 'home';
           else if (route.name === 'Inventario') iconName = 'list';
           else if (route.name === 'Perfil') iconName = 'person';
+          else if (route.name === 'Guardados') iconName = 'bookmark';
           return <Icon name={iconName} size={size} color={color} />;
         },
         headerShown: false,
         tabBarActiveTintColor: '#9A0C1A',
         tabBarInactiveTintColor: '#6D747C',
-        tabBarStyle: { backgroundColor: '#B0B1B5' },
+        tabBarStyle: { backgroundColor: '#F8F4C4' },
       })}
     >
       <Tab.Screen name="Home" component= {HomeScreen}/>
       <Tab.Screen name="Inventario" component={InventoryScreen} />
+  
       <Tab.Screen name="Perfil" component={ProfileScreen} />
     </Tab.Navigator>
   );

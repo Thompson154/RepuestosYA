@@ -8,12 +8,12 @@ export default function SelectAccountScreen({ navigation }) {
       <Text style={styles.title}>Selecciona tu{'\n'}tipo de cuenta</Text>
 
       <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Register')}>
-        <Icon name="user" size={20} color="#000" style={styles.icon} />
+        <Icon name="user" size={20} color="#fff" style={styles.icon} />
         <Text style={styles.buttonText}>User / Cliente</Text>
       </TouchableOpacity>
 
       <TouchableOpacity style={styles.button}>
-        <Icon name="store" size={20} color="#000" style={styles.icon} />
+        <Icon name="store" size={20} color="#fff" style={styles.icon} />
         <Text style={styles.buttonText}>Store</Text>
       </TouchableOpacity>
     </View>
@@ -23,7 +23,7 @@ export default function SelectAccountScreen({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#B0B1B5',
+    backgroundColor: '#F8F4C4', // Fondo crema
     justifyContent: 'center',
     alignItems: 'center',
     padding: 20,
@@ -48,6 +48,7 @@ const styles = StyleSheet.create({
     marginRight: 10,
   },
   buttonText: {
+    color: '#fff',
     fontSize: 16,
   },
 });

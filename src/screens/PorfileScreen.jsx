@@ -55,7 +55,7 @@ export default function ProfileScreen({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#B0B1B5',
+    backgroundColor: '#F8F4C4',
     alignItems: 'center',
     padding: 40,
   },

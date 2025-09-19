@@ -22,7 +22,7 @@ export default function InventoryScreen() {
         </View>
 
         <TouchableOpacity style={styles.cartButton}>
-          <Icon name="shopping-cart" size={22} color="#fff" />
+          <Icon name="book" size={22} color="#fff" />
         </TouchableOpacity>
       </View>
 
@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
     flex: 1, 
     paddingHorizontal: 25, 
     paddingTop: 50, // ↑ más espacio arriba
-    backgroundColor: '#B0B1B5'
+    backgroundColor: '#47667B'  // Fondo crema
   },
   // 🔹 Header con search y carrito
   header: {
@@ -61,7 +61,7 @@ const styles = StyleSheet.create({
   },
   searchContainer: {
     flexDirection: 'row',
-    backgroundColor: '#fff',
+    backgroundColor: '#F8F4C4',
     flex: 1,
     borderRadius: 10,
     paddingHorizontal: 10,
@@ -86,19 +86,19 @@ const styles = StyleSheet.create({
     fontSize: 30, 
     fontWeight: 'bold',
     marginBottom: 20, // ↓ menos espacio que antes
-    color: '#6D747C'
+    color: '#fff'
   },
   tableHeader: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     marginBottom: 8,
     borderBottomWidth: 1,
-    borderBottomColor: '#6D747C',
+    borderBottomColor: '#fff',
     paddingBottom: 5
   },
   headerText: {
     fontWeight: 'bold',
-    color: '#6D747C'
+    color: '#fff'
   },
   row: {
     flexDirection: 'row',
