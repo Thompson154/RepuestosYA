@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet, TextInput, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, TextInput, SafeAreaView } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 export default function InventoryScreen() {
@@ -9,64 +9,65 @@ export default function InventoryScreen() {
   ];
 
   return (
-    <View style={styles.container}>
-      {/* 🔹 Header con Search y Carrito */}
-      <View style={styles.header}>
-        <View style={styles.searchContainer}>
-          <Icon name="search" size={18} color="#6D747C" style={styles.searchIcon} />
-          <TextInput
-            style={styles.searchInput}
-            placeholder="Buscar producto..."
-            placeholderTextColor="#6D747C"
-          />
+    <SafeAreaView style={styles.safeContainer}>
+      <View style={styles.container}>
+        {/* Header con search */}
+        <View style={styles.header}>
+          <View style={styles.searchContainer}>
+            <Icon name="search" size={18} color="#6D747C" style={styles.searchIcon} />
+            <TextInput
+              style={styles.searchInput}
+              placeholder="Buscar producto..."
+              placeholderTextColor="#6D747C"
+            />
+          </View>
         </View>
 
-        <TouchableOpacity style={styles.cartButton}>
-          <Icon name="book" size={22} color="#fff" />
-        </TouchableOpacity>
-      </View>
+        {/* Inventario */}
+        <Text style={styles.title}>Tu Inventario</Text>
 
-      {/* 🔹 Inventario */}
-      <Text style={styles.title}>Tu Inventario</Text>
-      <View style={styles.tableHeader}>
-        <Text style={styles.headerText}>Producto</Text>
-        <Text style={styles.headerText}>Cantidad</Text>
-        <Text style={styles.headerText}>Precio</Text>
-        <Text style={styles.headerText}>Categoría</Text>
-      </View>
-      {inventory.map(item => (
-        <View key={item.id} style={styles.row}>
-          <Text style={styles.text}>{item.product}</Text>
-          <Text style={styles.text}>{item.qty}</Text>
-          <Text style={styles.price}>${item.price}</Text>
-          <Text style={styles.text}>{item.category}</Text>
+        <View style={styles.tableHeader}>
+          <Text style={styles.headerText}>Producto</Text>
+          <Text style={styles.headerText}>Cantidad</Text>
+          <Text style={styles.headerText}>Precio</Text>
+          <Text style={styles.headerText}>Categoría</Text>
         </View>
-      ))}
-    </View>
+
+        {inventory.map(item => (
+          <View key={item.id} style={styles.row}>
+            <Text style={styles.text}>{item.product}</Text>
+            <Text style={styles.text}>{item.qty}</Text>
+            <Text style={styles.price}>${item.price}</Text>
+            <Text style={styles.text}>{item.category}</Text>
+          </View>
+        ))}
+      </View>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
+  safeContainer: {
+    flex: 1,
+    backgroundColor: '#E5EFF5', // Fondo azul claro similar a productos/home
+  },
   container: {
     flex: 1, 
-    paddingHorizontal: 25, 
-    paddingTop: 50, // ↑ más espacio arriba
-    backgroundColor: '#47667B'  // Fondo crema
+    paddingHorizontal: 20, 
+    paddingTop: 20, // Ajuste para notch/cámara iPhone
   },
-  // 🔹 Header con search y carrito
   header: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginBottom: 25, // ↓ menos espacio que antes
+    marginBottom: 20,
   },
   searchContainer: {
     flexDirection: 'row',
-    backgroundColor: '#F8F4C4',
+    backgroundColor: '#FFFFFF', // Blanco para el search box
     flex: 1,
-    borderRadius: 10,
+    borderRadius: 12,
     paddingHorizontal: 10,
     alignItems: 'center',
-    marginRight: 10,
   },
   searchIcon: {
     marginRight: 8,
@@ -74,45 +75,39 @@ const styles = StyleSheet.create({
   searchInput: {
     flex: 1,
     height: 40,
-    color: '#333',
+    color: '#333333',
   },
-  cartButton: {
-    backgroundColor: '#9A0C1A',
-    padding: 10,
-    borderRadius: 10,
-  },
-  // 🔹 Estilos originales de la tabla
   title: {
-    fontSize: 30, 
+    fontSize: 28, 
     fontWeight: 'bold',
-    marginBottom: 20, // ↓ menos espacio que antes
-    color: '#fff'
+    marginBottom: 15,
+    color: '#7E1C13', // Guindo para título
   },
   tableHeader: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     marginBottom: 8,
     borderBottomWidth: 1,
-    borderBottomColor: '#fff',
-    paddingBottom: 5
+    borderBottomColor: '#7E1C13', // Guindo para línea de header
+    paddingBottom: 5,
   },
   headerText: {
     fontWeight: 'bold',
-    color: '#fff'
+    color: '#7E1C13', // Guindo para texto de header
   },
   row: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     marginVertical: 5,
-    backgroundColor: '#fff',
+    backgroundColor: '#FFFFFF', // blanco para las filas
     padding: 10,
-    borderRadius: 6
+    borderRadius: 8,
   },
   text: {
-    color: '#6D747C'
+    color: '#333333', // Gris oscuro para texto normal
   },
   price: {
-    color: '#9A0C1A',
-    fontWeight: 'bold'
+    color: '#D72631', // Rojo para precio/acento
+    fontWeight: 'bold',
   }
 });

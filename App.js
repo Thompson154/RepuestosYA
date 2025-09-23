@@ -15,6 +15,7 @@ import InventoryScreen from './src/screens/InventoryScreen';
 import ProfileScreen from './src/screens/PorfileScreen';
 import DetalleScreen from './src/screens/InfoScreen';
 import FavoritesScreen from './src/screens/FavoriteScreen';
+import ProductsScreen from './src/screens/ProductScreen';
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -30,18 +31,22 @@ function StoreTabs() {
           else if (route.name === 'Inventario') iconName = 'list';
           else if (route.name === 'Perfil') iconName = 'person';
           else if (route.name === 'Guardados') iconName = 'bookmark';
+          else if (route.name === 'Productos') iconName = 'car-sport';
           return <Icon name={iconName} size={size} color={color} />;
         },
         headerShown: false,
         tabBarActiveTintColor: '#9A0C1A',
         tabBarInactiveTintColor: '#6D747C',
-        tabBarStyle: { backgroundColor: '#F8F4C4' },
+        tabBarStyle: { backgroundColor: '#E5EFF5' },
       })}
     >
       <Tab.Screen name="Home" component={HomeScreen} />
       <Tab.Screen name="Inventario" component={InventoryScreen} />
-      <Tab.Screen name="Guardados" component={FavoritesScreen} />  
+    
+      <Tab.Screen name="Productos" component={ProductsScreen} /> 
+        <Tab.Screen name="Guardados" component={FavoritesScreen} /> 
       <Tab.Screen name="Perfil" component={ProfileScreen} />
+      
     </Tab.Navigator>
   );
 }
