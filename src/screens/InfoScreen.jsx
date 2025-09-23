@@ -41,7 +41,7 @@ export default function InfoScreen() {
           style={styles.logo}
         />
 
-        <Text style={styles.title}>Amortiguador delantero</Text>
+        <Text style={styles.title}>Nombre de la empresa</Text>
 
         <Text style={styles.subtitle}>Marcas con las que trabajamos</Text>
 

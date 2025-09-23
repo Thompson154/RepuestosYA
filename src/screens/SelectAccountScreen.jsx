@@ -7,12 +7,18 @@ export default function SelectAccountScreen({ navigation }) {
     <View style={styles.container}>
       <Text style={styles.title}>Selecciona tu{'\n'}tipo de cuenta</Text>
 
-      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Register')}>
+      <TouchableOpacity 
+        style={styles.button} 
+        onPress={() => navigation.navigate('Register')}
+      >
         <Icon name="user" size={20} color="#fff" style={styles.icon} />
         <Text style={styles.buttonText}>User / Cliente</Text>
       </TouchableOpacity>
 
-      <TouchableOpacity style={styles.button}>
+      <TouchableOpacity 
+        style={styles.button} 
+        onPress={() => navigation.navigate('Store')}
+      >
         <Icon name="store" size={20} color="#fff" style={styles.icon} />
         <Text style={styles.buttonText}>Store</Text>
       </TouchableOpacity>
@@ -23,7 +29,7 @@ export default function SelectAccountScreen({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#F8F4C4', // Fondo crema
+    backgroundColor: '#E5EFF5', // azul claro como HomeScreen
     justifyContent: 'center',
     alignItems: 'center',
     padding: 20,
@@ -33,22 +39,27 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     marginBottom: 40,
     fontWeight: '500',
+    color: '#7E1C13', // guindo para título
   },
   button: {
     flexDirection: 'row',
-    backgroundColor: '#6D747C',
+    backgroundColor: '#7E1C13', // guindo como botones Home/Login
     paddingVertical: 12,
     paddingHorizontal: 20,
-    borderRadius: 10,
+    borderRadius: 12,
     marginBottom: 20,
     width: '80%',
     alignItems: 'center',
+    justifyContent: 'center',
+    elevation: 3,
   },
   icon: {
     marginRight: 10,
+    color: '#fff',
   },
   buttonText: {
-    color: '#fff',
+    color: '#FFFFFF',
     fontSize: 16,
+    fontWeight: '600',
   },
 });
