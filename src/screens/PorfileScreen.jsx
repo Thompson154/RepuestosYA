@@ -29,10 +29,13 @@ export default function ProfileScreen({ navigation }) {
 
       {/* Botones */}
       <View style={styles.buttonContainer}>
-        <TouchableOpacity style={styles.button}>
-          <Icon name="info-circle" size={18} color="#fff" style={styles.icon} />
-          <Text style={styles.buttonText}>Información</Text>
+        <TouchableOpacity  style={styles.button}
+         onPress={() => navigation.navigate("InfoScreen")}  > // 🔗 manda a InfoScreen
+      <Icon name="info-circle" size={18} color="#fff" style={styles.icon} />
+       <Text style={styles.buttonText}>Información</Text>
+
         </TouchableOpacity>
+        
 
         <TouchableOpacity style={styles.button}>
           <Icon name="edit" size={18} color="#fff" style={styles.icon} />

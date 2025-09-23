@@ -13,6 +13,8 @@ import RegisterScreen from './src/screens/SignUpScreen';
 import { default as HomeScreen } from './src/screens/HomeScreen';
 import InventoryScreen from './src/screens/InventoryScreen';
 import ProfileScreen from './src/screens/PorfileScreen';
+import DetalleScreen from './src/screens/InfoScreen';
+import FavoritesScreen from './src/screens/FavoriteScreen';
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -36,13 +38,14 @@ function StoreTabs() {
         tabBarStyle: { backgroundColor: '#F8F4C4' },
       })}
     >
-      <Tab.Screen name="Home" component= {HomeScreen}/>
+      <Tab.Screen name="Home" component={HomeScreen} />
       <Tab.Screen name="Inventario" component={InventoryScreen} />
-  
+      <Tab.Screen name="Guardados" component={FavoritesScreen} />  
       <Tab.Screen name="Perfil" component={ProfileScreen} />
     </Tab.Navigator>
   );
 }
+
 
 // Stack principal
 export default function App() {
@@ -54,6 +57,7 @@ export default function App() {
         <Stack.Screen name="SelectAccount" component={SelectAccountScreen} />
         <Stack.Screen name="Register" component={RegisterScreen} />
         <Stack.Screen name="Store" component={StoreTabs} />
+        <Stack.Screen name="InfoScreen" component={DetalleScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
